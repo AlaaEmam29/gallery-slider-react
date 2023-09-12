@@ -80,8 +80,9 @@ export const ImagesProvider = ({ children }) => {
     dispatch({ type: imagesType.LOADING, payload: true });
 
     try {
-      const response = await axios.get(`https://gallery-slider-react-v1.vercel.app/images.json`);
-      dispatch({ type: imagesType.SUCCESS, payload: response.data });
+      const response = await axios.get(`/images.json`);
+      dispatch({ type: imagesType.SUCCESS, payload: response.data.data });
+      console.log(response.data , "response.data")
     } catch (error) {
       console.log( error.message)
       dispatch({ type: imagesType.ERROR, payload: error.message });
