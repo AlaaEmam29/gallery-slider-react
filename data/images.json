@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Starry Night",
+      "year": 1889,
+      "description": "Although The Starry Night was painted during the day in Van Gogh's ground-floor studio, it would be inaccurate to state that the picture was painted from memory. The view has been identified as the one from his bedroom window, facing east, a view which Van Gogh painted variations of no fewer than twenty-one times, including The Starry Night. \"Through the iron-barred window,\" he wrote to his brother, Theo, around 23 May 1889, \"I can see an enclosed square of wheat ... above which, in the morning, I watch the sun rise in all its glory.\"",
+      "source": "https://en.wikipedia.org/wiki/The_Starry_Night",
+      "url": "/imgs/starry-night/hero-large.jpg",
+
+      "artist": {
+        "image": "/imgs/starry-night/artist.jpg",
+        "name": "Vincent Van Gogh"
+      },
+      "images": {
+        "thumbnail": "/imgs/starry-night/thumbnail.jpg",
+        "hero": {
+          "small": "/imgs/starry-night/hero-small.jpg",
+          "large": "/imgs/starry-night/hero-large.jpg"
+        },
+        "gallery": "/imgs/starry-night/gallery.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "The Great Wave off Kanagawa",
+      "year": 1831,
+      "description": "The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. \"Under the Wave off Kanagawa\"), also known as The Great Wave or simply The Wave, is a woodblock print by the Japanese ukiyo-e artist Hokusai. It was published sometime between 1829 and 1833 in the late Edo period as the first print in Hokusai's series Thirty-six Views of Mount Fuji. The image depicts an enormous wave threatening three boats off the coast in the Sagami Bay (Kanagawa Prefecture) while Mount Fuji rises in the background.",
+      "source": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
+      "url": "/imgs/the-great-wave-off-kanagawa/hero-large.jpg",
+
+      "artist": {
+        "image": "/imgs/the-great-wave-off-kanagawa/artist.jpg",
+        "name": "Hokusai"
+      },
+      "images": {
+        "thumbnail": "/imgs/the-great-wave-off-kanagawa/thumbnail.jpg",
+        "hero": {
+          "small": "/imgs/the-great-wave-off-kanagawa/hero-small.jpg",
+          "large": "/imgs/the-great-wave-off-kanagawa/hero-large.jpg"
+        },
+        "gallery": "/imgs/the-great-wave-off-kanagawa/gallery.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "name": "The Swing",
+      "year": 1767,
+      "description": "The painting depicts an elegant young woman on a swing. A smiling young man, hiding in the bushes on the left, watches her from a vantage point that allows him to see up into her billowing dress, where his arm is pointed with hat in hand. A smiling older man, who is nearly hidden in the shadows on the right, propels the swing with a pair of ropes. The older man appears to be unaware of the young man. As the young lady swings high, she throws her left leg up, allowing her dainty shoe to fly through the air.",
+      "source": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)",
+      "url": "/imgs/the-swing/hero-large.jpg",
+      "artist": {
+        "image": "/imgs/the-swing/artist.jpg",
+        "name": "Jean-Honoré Fragonard"
+      },
+      "images": {
+        "thumbnail": "/imgs/the-swing/thumbnail.jpg",
+        "hero": {
+          "small": "/imgs/the-swing/hero-small.jpg",
+          "large": "/imgs/the-swing/hero-large.jpg"
+        },
+        "gallery": "/imgs/the-swing/gallery.jpg"
+      }
+    }
+  ]
+}
