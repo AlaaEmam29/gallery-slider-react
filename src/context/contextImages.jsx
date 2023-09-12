@@ -81,7 +81,7 @@ export const ImagesProvider = ({ children }) => {
     dispatch({ type: imagesType.LOADING, payload: true });
 
     try {
-      const response = await axios.get(`../../data/images.json`);
+      const response = await axios.get(`images.json`);
       dispatch({ type: imagesType.SUCCESS, payload: response.data });
     } catch (error) {
       dispatch({ type: imagesType.ERROR, payload: error.message });
