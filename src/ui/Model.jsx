@@ -331,13 +331,13 @@ const Model = ({ children, activeModel }) => {
 };
 const Close = ({ children, onClick }) => {
   return createPortal(
-    <CloseButton onClick={onClick}>{children}</CloseButton>,
+    <CloseButton onClick={onClick} aria-label="Close">{children}</CloseButton>,
     document.body,
   );
 };
 const Theme = ({ children, onClick }) => {
   return createPortal(
-    <ThemeButton onClick={onClick}>{children}</ThemeButton>,
+    <ThemeButton onClick={onClick} aria-label="Dark Mode">{children}</ThemeButton>,
     document.body,
   );
 };

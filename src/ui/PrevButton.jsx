@@ -11,7 +11,7 @@ const StyledPrevButton = styled.button`
 `;
 export default function PrevButton({ onClick }) {
   return (
-    <StyledPrevButton onClick={onClick}>
+    <StyledPrevButton onClick={onClick} aria-label="Previous">
       <svg xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fillRule="evenodd">
           <path

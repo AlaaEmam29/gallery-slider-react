@@ -23,7 +23,7 @@ export default function InfoImages() {
   return (
     <>
       <InfoComponent>
-            <InfoComponent.Buttons className="prev" onClick={handlePrevPage}>
+            <InfoComponent.Buttons className="prev" aria-label="Previous" onClick={handlePrevPage}>
               <AiOutlineLeft />
             </InfoComponent.Buttons>
             <InfoComponent.Body>
@@ -47,7 +47,7 @@ export default function InfoImages() {
               )}
             </InfoComponent.Body>
 
-            <InfoComponent.Buttons className="next" onClick={handleNextPage}>
+            <InfoComponent.Buttons className="next" aria-label="Next" onClick={handleNextPage}>
               <AiOutlineRight />
             </InfoComponent.Buttons>
           </InfoComponent>

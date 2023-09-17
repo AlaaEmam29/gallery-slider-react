@@ -11,7 +11,7 @@ const StyledNextButton = styled.button`
 `;
 export default function NextButton({ onClick }) {
   return (
-    <StyledNextButton onClick={onClick}>
+    <StyledNextButton onClick={onClick} aria-label="Next">
       <svg xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fillRule="evenodd">
           <path

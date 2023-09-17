@@ -53,7 +53,7 @@ function Error({ error , resetErrorBoundary }) {
         <ErrorBox>
           <h1>Something went wrong</h1>
           <p>{error.message}</p>
-          <Button  onClick={resetErrorBoundary}>
+          <Button  onClick={resetErrorBoundary} aria-label="Try again">
             Try again
           </Button>
         </ErrorBox>
