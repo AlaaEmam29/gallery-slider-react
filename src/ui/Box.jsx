@@ -12,13 +12,10 @@ const StyledBox = styled.div`
   background-image: url(${({ image }) => image});
 `;
 export default function Box({ data , index , currentPage }) {
-let imageLarge = '';
-if(index === 5){
- 
-  imageLarge = data.images.hero.large;
-}
-else {
-   imageLarge = data;
-}
+
+const {
+  images: { hero : { large : imageLarge } },
+
+} = data
 return <StyledBox image={imageLarge} />;
 }

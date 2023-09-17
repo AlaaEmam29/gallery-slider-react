@@ -4,15 +4,7 @@ import { SPLIT_SLIDER_COUNT } from "../utils/constant";
 import { useImages } from "../context/contextImages";
 import Skeleton from "react-loading-skeleton";
 import Box from "./Box.jsx";
-const fixedImages = [
-  "/imgs/hero-large-0.jpg",
-  "/imgs/hero-large-1.jpg",
-  "/imgs/hero-large-2.jpg",
-  "/imgs/hero-large-3.jpg",
-  "/imgs/hero-large-4.jpg",
-  "/imgs/hero-large-4.jpg",
-  "/imgs/hero-large-6.jpg",
-];
+
 
 const slideAnimation = keyframes`
   0% {
@@ -98,27 +90,8 @@ export default function Slider() {
       {Array.from({ length: SPLIT_SLIDER_COUNT }).map((_, index) => {
         if (images.length > 0 && !isLoading) {
           const data = images[currentPage];
-          if(index !== 5){
-            return (
-              <Box
-                data={ fixedImages[index]}
-                key={index}
-                index={index}
-                currentPage={currentPage}
-              />
-            );
+          return <Box key={index} data={data} index={index} currentPage={currentPage} />;
 
-          }
-          else{
-            return (
-              <Box
-                data={data}
-                key={index}
-                index={index}
-                currentPage={currentPage}
-              />
-            );
-          }
         } else {
           return (
             <StyledSkeleton
