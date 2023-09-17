@@ -4,17 +4,34 @@ import { SPLIT_SLIDER_COUNT } from "../utils/constant";
 import { useImages } from "../context/contextImages";
 import Skeleton from "react-loading-skeleton";
 import Box from "./Box.jsx";
+const fixedImages = [
+  "/imgs/hero-large-0.jpg",
+  "/imgs/hero-large-1.jpg",
+  "/imgs/hero-large-2.jpg",
+  "/imgs/hero-large-3.jpg",
+  "/imgs/hero-large-4.jpg",
+  "/imgs/hero-large-4.jpg",
+  "/imgs/hero-large-6.jpg",
+];
 
 const slideAnimation = keyframes`
-  from {
-    transform: translateX(-100%) skew(-20deg);
+  0% {
+    transform: translateX(-100%)     skew(-20deg);
   }
-  to {
-    transform: translateX(0) skew(-20deg);
+  50% {
+    transform: translateX(0%)  skew(-20deg);
+        
+  }
+  75% {
+    transform: translateX(0%)  skew(-20deg);
+    
   }
 
+  100% {
+    transform: translateX(0%)  skew(-20deg);
+    
+  }
 `;
-
 const StyledSlider = styled.div`
   width: 75vw;
   display: grid;
@@ -24,11 +41,15 @@ const StyledSlider = styled.div`
   grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 40% 1fr;
   transform: skew(-20deg);
   
-  ${({ animate }) =>
-    animate &&
+  ${({animate}) =>
+    animate&&
     css`
-      animation: ${slideAnimation} 0.8s ease-in-out forwards;
+      animation: ${slideAnimation} 0.5s ease-in-out forwards;
     `}
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+    transform: skew(0deg);
+  }
+
     @media only screen and (max-width: 376px){
       width: 100vw;
       grid-template-columns: 0.5rem 10% 1fr 1fr 1fr 30% 1fr;
@@ -58,32 +79,46 @@ export default function Slider() {
   const {
     state: { isLoading, images, currentPage },
   } = useImages();
-
   const [animate, setAnimate] = useState(false);
 
   const handlePageChange = () => {
     setAnimate(true);
     setTimeout(() => {
       setAnimate(false);
-    }, 800);
+    }, 500);
   };
   useEffect(() => {
     handlePageChange();
   }, [currentPage]);
+  
+  
 
   return (
-    <StyledSlider animate={animate}>
+    <StyledSlider animate = {animate}>
       {Array.from({ length: SPLIT_SLIDER_COUNT }).map((_, index) => {
         if (images.length > 0 && !isLoading) {
           const data = images[currentPage];
-          return (
-            <Box
-              data={data}
-              key={index}
-              index={index}
-              currentPage={currentPage}
-            />
-          );
+          if(index !== 5){
+            return (
+              <Box
+                data={ fixedImages[index]}
+                key={index}
+                index={index}
+                currentPage={currentPage}
+              />
+            );
+
+          }
+          else{
+            return (
+              <Box
+                data={data}
+                key={index}
+                index={index}
+                currentPage={currentPage}
+              />
+            );
+          }
         } else {
           return (
             <StyledSkeleton

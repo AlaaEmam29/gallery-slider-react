@@ -1,5 +1,6 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { css ,keyframes} from "styled-components";
+
 const StyledBox = styled.div`
   height: 100%;
 
@@ -9,20 +10,15 @@ const StyledBox = styled.div`
   transform: skew(-20deg);
   transition: all 0.5s ease-in-out;
   background-image: url(${({ image }) => image});
-  @media only screen and (min-width: 376px) and (max-width: 768px) {
-    transform: skew(0deg);
-  }
 `;
-export default function Box({ data }) {
-  const {
-    artist: { image: imageArtist, name: nameArtist },
-    images: {
-      hero: { large: imageLarge, small: imageSmall },
-    },
-    nameImg,
-    source,
-    year,
-    description,
-  } = data;
-  return <StyledBox image={imageLarge} />;
+export default function Box({ data , index , currentPage }) {
+let imageLarge = '';
+if(index === 5){
+ 
+  imageLarge = data.images.hero.large;
+}
+else {
+   imageLarge = data;
+}
+return <StyledBox image={imageLarge} />;
 }
