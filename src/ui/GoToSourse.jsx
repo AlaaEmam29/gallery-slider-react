@@ -22,7 +22,7 @@ const GoToSourceLink = styled.a`
   }
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     position: relative;
-    top: 145%;
+    top: 110%;
     left: 60%;
     padding: 1rem 2rem;
     margin-top: 7rem;

@@ -23,25 +23,32 @@ const StyledSlider = styled.div`
   right: 22%;
   grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 40% 1fr;
   transform: skew(-20deg);
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    right: 35%;
-    grid-template-columns: 15% 10% 10% 10% 15% 30% 10%;
-    width: 85vw;
-  }
-
+  
   ${({ animate }) =>
     animate &&
     css`
       animation: ${slideAnimation} 0.8s ease-in-out forwards;
     `}
+    @media only screen and (max-width: 376px){
+      width: 100vw;
+      grid-template-columns: 0.5rem 10% 1fr 1fr 1fr 30% 1fr;
+      grid-column-gap: 0.6rem;
+      right: 65%;
+
+    }
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     right: 20%;
-
+    
     width: 100%;
     transform: skew(-10);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 30% 1fr;
   }
-`;
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    right: 35%;
+    grid-template-columns: 15% 10% 10% 10% 15% 30% 10%;
+    width: 85vw;
+  }
+  `;
 
 const StyledSkeleton = styled(Skeleton)`
   height: 100%;

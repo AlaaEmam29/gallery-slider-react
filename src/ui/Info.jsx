@@ -8,6 +8,16 @@ const StyledInfo = styled.div`
   top: 50%;
   gap: 5rem;
   transform: translateY(-50%);
+  @media only screen and (max-width: 376px){
+    width: 85%;
+    height: 25rem;
+    right: 85%;
+    background: rgba(0, 0, 0, 0.5);
+
+ 
+
+  }
+
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     top: 60%;
   }
@@ -49,6 +59,25 @@ const StyledButtons = styled.button`
     svg {
       fill: #34d399;
     }
+  }
+  @media only screen and (max-width: 376px){
+    transform: translateY(-50%);
+    svg {
+      fill: #34d399;
+    }
+    top: 50%;
+
+    ${({ className }) =>
+      className === "prev" &&
+      css`
+        left: 0%;
+      `}
+    ${({ className }) =>
+      className === "next" &&
+      css`
+        right: 0%;
+      `}
+
   }
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     top: 50%;
@@ -106,6 +135,12 @@ const StyledBody = styled.div`
     font-size: 1.4rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.5);
+  }
+  @media only screen and (max-width: 376px){
+    p{
+      font-size: 1rem ;
+
+    }
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     width: 40rem;

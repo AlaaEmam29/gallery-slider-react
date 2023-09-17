@@ -10,6 +10,8 @@ const Wrapper = styled.section`
   & > * {
     height: 60rem;
     width: 100%;
+  
+
   }
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     grid-template-columns: 1fr;

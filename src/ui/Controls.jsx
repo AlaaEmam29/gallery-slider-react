@@ -4,6 +4,13 @@ import SeeAll from "./SeeAll";
 import { useImages } from "../context/contextImages";
 const StyledControls = styled.div`
   width: inherit;
+  @media only screen and (max-width: 376px){
+    height: fit-content;
+    position: relative;
+    bottom: 10%;
+    right: 80%;  
+      text-align: center;
+  }
 
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     width: 100%;

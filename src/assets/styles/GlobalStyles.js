@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { device } from "../../utils/constant";
 
 const GlobalStyle = createGlobalStyle`
 :root{
@@ -82,7 +81,7 @@ img {
 }
 @media only screen and (max-width: 375px) {
   html{
-    font-size: 50%;
+    font-size: 45%;
   }
 }
 @media only screen and (min-width: 376px) and (max-width: 768px) {

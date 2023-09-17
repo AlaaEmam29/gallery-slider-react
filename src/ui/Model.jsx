@@ -12,7 +12,7 @@ const Overlay = styled.section`
 `;
 const StyledBody = styled.div`
   width: 100%;
-  height: 85vh;
+  height: 75vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,19 +21,85 @@ const StyledBody = styled.div`
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 10rem 1fr 1fr 10rem;
-  gap: 5rem;
+  grid-template-rows: repeat(2 , 1fr);
   color: var(--color-light);
-  @media only screen and (min-width: 376px) and (max-width: 768px) {
-    overflow: auto;
+  grid-column-gap:4rem;
 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+
   & > *:first-child {
-    grid-column: 2/3;
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
   }
   & > *:nth-child(2) {
-    grid-column: 3/4;
+   grid-column: 3 / 4;
+   grid-row: 1 / -1;
+
+  }
+  & > *:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    
+ 
+  }
+  & > *:nth-child(4) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+
+  }
+  @media only screen and (max-width: 376px){
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-template-rows:3rem 45rem 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 2rem;
+    height: 100vh;
+  & > *:first-child {
+    grid-column: 1/-1;
+    grid-row: 2 / 3;
+  }
+  & > *:nth-child(2) {
+    grid-column: 1/-1;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  & > *:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 1/-1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); 
+ 
+  }
+  & > *:nth-child(4) {
+    grid-column: 4 / 5;
+    grid-row: 1 / -1;
+  
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); 
+  }
+
+
+  }
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-template-rows:3rem 30rem 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 2rem;
+    height: 100vh;
+  & > *:first-child {
+    grid-column: 1/-1;
+    grid-row: 2 / 3;
+  }
+  & > *:nth-child(2) {
+    grid-column: 1/-1;
+    grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,41 +107,59 @@ const StyledBody = styled.div`
   }
   & > *:nth-child(3) {
     grid-column: 1 / 2;
-    grid-row: 1 / -1;
+    grid-row: 1/-1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); 
+ 
   }
   & > *:nth-child(4) {
     grid-column: 4 / 5;
     grid-row: 1 / -1;
+  
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); 
   }
-  @media only screen and (min-width: 376px) and (max-width: 768px) {
-    grid-template-rows: 50% 1fr;
-    grid-row-gap: 2rem;
-    & > *:first-child {
-      grid-column: 1/-1;
-      height: 100%;
-      grid-row: 1 / 2;
-    }
-    & > *:nth-child(2) {
-      grid-column: 1/-1;
-    }
-    & > *:nth-child(3) {
-      position: absolute;
-      bottom: 25%;
-      left: 15%;
-    }
-    & > *:nth-child(4) {
-      position: absolute;
-      bottom: 25%;
-      right: 15%;
-    }
   }
 
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    grid-template-columns: 5rem 1fr 2fr 5rem;
+    grid-template-columns: 5rem 1fr 1.5fr 5rem;
+height: 95vh;
+padding-top: 7rem;
+
+    &>:nth-child(3) , &>:nth-child(4){
+      align-self: flex-start  ;
+      width: 3rem;
+      justify-self: center;
+
+    }
   }
   @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-    grid-template-columns: 7rem 1fr 1fr 7rem;
-    gap: 3rem;
+    grid-template-columns: 5rem 1fr 1fr 5rem;
+    padding-top: 7rem;
+    gap:5rem;
+    overflow-x: hidden;
+    height: 100vh;
+    & > *:nth-child(4) ,   & > *:nth-child(3) {
+      grid-row: 2 / 3;
+      align-self: flex-start;
+      justify-self: center;
+      svg{
+        width: 3rem;
+      }
+
+    }
+    & > *:nth-child(3) {
+    grid-column: 1 / 2;
+ 
+  }
+  & > *:nth-child(4) {
+    grid-column: 4 / 5;
+
+  }
   }
 `;
 const Img = styled.img`
@@ -84,10 +168,15 @@ const Img = styled.img`
   object-fit: cover;
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     width: 100%;
-    height: inherit;
+        height: 100%;
+        object-fit:cover;
+  
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     height: 50%;
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+height: 75%;
   }
 `;
 const Box = styled.div`
@@ -107,10 +196,10 @@ const Box = styled.div`
   p {
     font-size: 1.4rem;
   }
+
+
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
-  }
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
     top: 40%;
     left: 0%;
   }
@@ -134,10 +223,10 @@ const Button = styled.div`
 const CloseButton = styled.button`
   all: unset;
   position: absolute;
-  top: 2rem;
+  top: 5rem;
   right: 2rem;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 1000000;
   svg {
     fill: var(--color-dark);
     width: 3rem;
@@ -148,6 +237,14 @@ const CloseButton = styled.button`
     svg {
       fill: #34d399;
     }
+  }
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+top:0.5rem;
+
+svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
   }
 `;
 const ThemeButton = styled.button`
@@ -161,6 +258,15 @@ const ThemeButton = styled.button`
     width: 3rem;
     height: 3rem;
   }
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+top:0.5rem;
+
+svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  }
+
 `;
 const Year = styled.span`
   font-family: "Schoolbell", cursive;
@@ -170,13 +276,27 @@ const Year = styled.span`
   right: 0;
   top: -15%;
   color: var(--color-dark);
+  @media only screen and (max-width: 376px){
+    top:-12%;
+
+  }
+  @media only screen and (min-width: 550px) and  (max-width: 650px) {
+left: 6%;
+
+  }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    top: -10%;
+    top: -22%;
+    left: 0%;
+    font-size: 20rem;
+
   }
+  
   @media only screen and (min-width: 1025px) and (max-width: 1300px) {
-    top: -15%;
-  }
-`;
+    top: -19%;
+    left: -10%;  }
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    }
+    `;
 const Description = styled.p`
   line-height: 1.8;
   font-size: 2rem;
